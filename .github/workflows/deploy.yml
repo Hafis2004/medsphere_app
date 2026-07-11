@@ -27,7 +27,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.0'
+          flutter-version: '3.38.6'
           channel: 'stable'
           cache: true
 
@@ -35,7 +35,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Flutter Web
-        run: flutter build web --release --base-href "/medsphere_app/"
+        run: flutter build web --release --base-href "/medsphere_app/" --no-wasm-dry-run
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
